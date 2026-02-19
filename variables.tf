@@ -15,17 +15,18 @@ DESCRIPTION
 
 variable "backend_http_settings" {
   type = map(object({
-    cookie_based_affinity               = optional(string, "Disabled")
-    name                                = string
-    port                                = number
-    protocol                            = string
-    affinity_cookie_name                = optional(string)
-    host_name                           = optional(string)
-    path                                = optional(string)
-    pick_host_name_from_backend_address = optional(bool)
-    probe_name                          = optional(string)
-    request_timeout                     = optional(number)
-    trusted_root_certificate_names      = optional(list(string))
+    cookie_based_affinity                = optional(string, "Disabled")
+    name                                 = string
+    port                                 = number
+    protocol                             = string
+    affinity_cookie_name                 = optional(string)
+    host_name                            = optional(string)
+    path                                 = optional(string)
+    pick_host_name_from_backend_address  = optional(bool)
+    probe_name                           = optional(string)
+    request_timeout                      = optional(number)
+    dedicated_backend_connection_enabled = optional(bool, false)
+    trusted_root_certificate_names       = optional(list(string))
     authentication_certificate = optional(list(object({
       name = string
     })))
